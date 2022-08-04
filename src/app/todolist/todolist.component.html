@@ -19,14 +19,17 @@
                     </tr>
                     <tr *ngFor="let item of user; index as i">
                         <td *ngIf="i!=0">{{i}}</td>
-                        <td *ngIf="i!=0">{{item.name}}</td>
+                        <td *ngIf="i!=0">{{item}}</td>
                         <td *ngIf="i!=0">
                             <button
                                 type="button" 
                                 class="btn btn-danger" 
                                 (click)="onDelete(i)"
                                 >Delete</button>
-                            <button type="button" class="btn btn-primary">Update</button>
+                            <button 
+                                type="button" 
+                                class="btn btn-primary"    
+                            >Update</button>
                         </td>
                     </tr>
             </table>
