@@ -13,25 +13,7 @@
       "postId": 1
     }
   ],
-  "User": [
-    {
-      "id": 1,
-      "name": "typicode"
-    },
-    {
-      "id": 2
-    },
-    [
-      "",
-      "asd"
-    ],
-    {
-      "id": 4
-    },
-    {
-      "id": 5
-    }
-  ],
+  "content": [],
   "profile": {
     "name": "typicode"
   }

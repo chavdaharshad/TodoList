@@ -1,0 +1,39 @@
+<div class="container-fluid">
+    <div class="container">
+        <div class="row">
+            <div className="col-12">
+                <div className="text-center">
+                    <label className="form-label">Enter a content here</label><br>
+                    <input type="text" id="form1" className="form-control" [(ngModel)]="addcontentValue" [(ngModel)]="editcontentValue"/>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div className="space">
+                <button type="button" class="btn btn-success" (click)="addData()">Save</button>
+            </div>
+            <div class="table">
+                <table className="">
+                    <thead>
+                        <tr>
+                            <th scope="col">No.</th>
+                            <th scope="col">content name</th>
+                            <th scope="col">Actions</th>
+                        </tr>
+                        <tr *ngFor="let item of contentArr">  
+                            <td>1</td>
+                            <td>{{item.content_name}}</td>
+                            <td>
+                                <button type="submit" class="btn btn-danger" (click)="deleteData(item)">Delete</button>
+                                <button type="submit" class="btn btn-primary" (click)="editData()">Update</button>
+
+                            </td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,14 @@
+.container{
+    color: rgb(8, 8, 8);
+    text-align: center;
+}
+.table{
+    display: flex;
+    justify-content: center;
+}
+.form-label{
+    display: block;
+}
+.space{
+    margin: 10px;
+}
