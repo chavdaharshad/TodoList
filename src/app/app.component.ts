@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'crud';
+
+  name!:string;
+  displayData(event:string) {
+    this.name=event
+  }
 }
