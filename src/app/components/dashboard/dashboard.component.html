@@ -10,7 +10,9 @@
         </div>
         <div class="row">
             <div className="space">
-                <button type="button" class="btn btn-success" (click)="addData()">Save</button>
+                <button type="button" class="btn btn-success m-2" (click)="addData()">Save</button>
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="editData()">Update</button>
+
             </div>
             <div class="table">
                 <table className="">
@@ -20,12 +22,12 @@
                             <th scope="col">content name</th>
                             <th scope="col">Actions</th>
                         </tr>
-                        <tr *ngFor="let item of contentArr">  
+                        <tr *ngFor="let item of contentArr">
                             <td>1</td>
                             <td>{{item.content_name}}</td>
                             <td>
-                                <button type="submit" class="btn btn-danger" (click)="deleteData(item)">Delete</button>
-                                <button type="submit" class="btn btn-primary" (click)="editData()">Update</button>
+                                <button type="submit" class="btn btn-danger m-2" (click)="deleteData(item)">Delete</button>
+                                <button type="submit" class="btn btn-primary" (click)="call(item)">Update</button>
 
                             </td>
                         </tr>

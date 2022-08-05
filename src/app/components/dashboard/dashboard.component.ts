@@ -9,56 +9,58 @@ import { CrudService } from 'src/app/service/crud.service';
 })
 export class DashboardComponent implements OnInit {
 
-  contentObj : Task = new Task();
-  contentArr :Task[]=[];
+  contentObj: Task = new Task();
+  contentArr: Task[] = [];
 
-  addcontentValue : string = '';
+  addcontentValue: string = '';
   editcontentValue: string = '';
-  constructor(private crudservice:CrudService) { }
+  constructor(private crudservice: CrudService) { }
 
   ngOnInit(): void {
-    this.editcontentValue = ''; 
+    this.editcontentValue = '';
+    this.addcontentValue = '';
     this.contentObj = new Task();
     this.getData();
   }
-  getData(){
-    this.crudservice.getData(this.contentObj).subscribe(res =>{
+  getData() {
+    this.crudservice.getData(this.contentObj).subscribe(res => {
       this.contentArr = res
-    },err => {
+    }, err => {
       alert("unble");
     });
   }
 
-  addData(){
+  addData() {
     this.contentObj.content_name = this.addcontentValue;
-    this.crudservice.addData(this.contentObj).subscribe(res =>{
-      this.ngOnInit();
-      this.addcontentValue = '';
-    },err => {
+    this.crudservice.addData(this.contentObj).subscribe(res => {
+        this.ngOnInit();
+        this.addcontentValue = '';
+    }, err => {
       alert(err);
     })
   }
 
-  editData(){
+  editData() {
     this.contentObj.content_name = this.editcontentValue;
     this.crudservice.editData(this.contentObj).subscribe(res => {
       this.ngOnInit();
-    },err =>{
+    }, err => {
       alert("failes");
     })
   }
 
 
-  deleteData(content : Task){
-    this.crudservice.deleteData(content).subscribe(res=> {
+  deleteData(content: Task) {
+    this.crudservice.deleteData(content).subscribe(res => {
       this.ngOnInit();
-    },err =>{
+    }, err => {
       alert("failes");
     })
   }
 
-}
-function content(content: any) {
-  throw new Error('Function not implemented.');
+  call(content: Task) {
+    this.contentObj = content;
+    this.editcontentValue = content.content_name
+  }
 }
 
